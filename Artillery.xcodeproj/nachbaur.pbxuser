@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	1B2D460612B6A82C00745347 /* RaceTrackView.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = RaceTrackView.m;
+		path = /Users/nachbaur/Desktop/CALayerAnimTest/Classes/RaceTrackView.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 741}}";
+			sepNavSelRange = "{726, 0}";
+			sepNavVisRange = "{0, 1326}";
+		};
+	};
+	1B2D461912B6E9A600745347 /* RaceTrackView.m:38 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1B2D460612B6A82C00745347 /* RaceTrackView.m */;
+		functionName = "-drawLayer:inContext:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 38;
+		location = CALayerAnimTest;
+		modificationTime = 315728393.606359;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	1B6E1E0E12CEFDAC00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* CALayerAnimTestAppDelegate.m */;
+		name = "CALayerAnimTestAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2019;
+		vrLoc = 0;
+	};
+	1B6E1F8C12CFD21000C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF68E612A30BD800FE1145 /* FloatingCloudViewController.h */;
+		name = "FloatingCloudViewController.h: 16";
+		rLen = 0;
+		rLoc = 265;
+		rType = 0;
+		vrLen = 265;
+		vrLoc = 0;
+	};
+	1B6E1F8E12CFD21000C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF69A912A336E000FE1145 /* RaceTrackViewController.h */;
+		name = "RaceTrackViewController.h: 14";
+		rLen = 0;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 258;
+		vrLoc = 0;
+	};
+	1B6E1F9412CFD79700C44A42 /* ButtonActionsViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 725}}";
+			sepNavSelRange = "{194, 0}";
+			sepNavVisRange = "{0, 265}";
+		};
+	};
+	1B6E1F9512CFD79700C44A42 /* ButtonActionsViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {900, 1807}}";
+			sepNavSelRange = "{3344, 0}";
+			sepNavVisRange = "{3288, 999}";
+		};
+	};
+	1B6E1F9B12CFD8AC00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* CALayerAnimTestAppDelegate.h */;
+		name = "CALayerAnimTestAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 499;
+		vrLoc = 0;
+	};
+	1B6E1FAB12CFDAFB00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */;
+		name = "RootViewController.h: 22";
+		rLen = 0;
+		rLoc = 514;
+		rType = 0;
+		vrLen = 521;
+		vrLoc = 0;
+	};
+	1B6E1FAC12CFDAFB00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF68E712A30BD800FE1145 /* FloatingCloudViewController.m */;
+		name = "FloatingCloudViewController.m: 16";
+		rLen = 0;
+		rLoc = 329;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 0;
+	};
+	1B6E1FAD12CFDAFB00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF683012A2D09500FE1145 /* OrbitingPlanetsViewController.m */;
+		name = "OrbitingPlanetsViewController.m: 9";
+		rLen = 0;
+		rLoc = 214;
+		rType = 0;
+		vrLen = 1779;
+		vrLoc = 0;
+	};
+	1B6E1FAE12CFDAFB00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF69AA12A336E000FE1145 /* RaceTrackViewController.m */;
+		name = "RaceTrackViewController.m: 20";
+		rLen = 0;
+		rLoc = 400;
+		rType = 0;
+		vrLen = 1841;
+		vrLoc = 0;
+	};
+	1B6E20B512D1A1CB00C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1B6E1F9412CFD79700C44A42 /* ButtonActionsViewController.h */;
+		name = "ButtonActionsViewController.h: 9";
+		rLen = 0;
+		rLoc = 194;
+		rType = 0;
+		vrLen = 265;
+		vrLoc = 0;
+	};
+	1B6E20BA12D1A20800C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1B6E1F9512CFD79700C44A42 /* ButtonActionsViewController.m */;
+		name = "ButtonActionsViewController.m: 21";
+		rLen = 0;
+		rLoc = 460;
+		rType = 0;
+		vrLen = 2038;
+		vrLoc = 2794;
+	};
+	1B6E20BB12D1A20800C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 26";
+		rLen = 0;
+		rLoc = 665;
+		rType = 0;
+		vrLen = 1410;
+		vrLoc = 0;
+	};
+	1B6E20D112D1A46400C44A42 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */;
+		name = "RootViewController.h: 14";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 521;
+		vrLoc = 0;
+	};
+	1BDF681C12A2BD5800FE1145 /* CALayerAnimTest */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = CALayerAnimTest;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	1BDF682B12A2BD5B00FE1145 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1BDF682C12A2BD5B00FE1145 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1BDF682F12A2D09500FE1145 /* OrbitingPlanetsViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {797, 678}}";
+			sepNavSelRange = "{263, 0}";
+			sepNavVisRange = "{0, 268}";
+		};
+	};
+	1BDF683012A2D09500FE1145 /* OrbitingPlanetsViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 1235}}";
+			sepNavSelRange = "{214, 0}";
+			sepNavVisRange = "{0, 1779}";
+		};
+	};
+	1BDF68E612A30BD800FE1145 /* FloatingCloudViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 725}}";
+			sepNavSelRange = "{265, 0}";
+			sepNavVisRange = "{0, 265}";
+		};
+	};
+	1BDF68E712A30BD800FE1145 /* FloatingCloudViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 725}}";
+			sepNavSelRange = "{329, 0}";
+			sepNavVisRange = "{0, 1380}";
+		};
+	};
+	1BDF68F312A30DF800FE1145 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1BDF682F12A2D09500FE1145 /* OrbitingPlanetsViewController.h */;
+		name = "OrbitingPlanetsViewController.h: 14";
+		rLen = 0;
+		rLoc = 263;
+		rType = 0;
+		vrLen = 268;
+		vrLoc = 0;
+	};
+	1BDF68F512A30DF800FE1145 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 1BDF68E912A30C8B00FE1145 /* cloud.png */;
+	};
+	1BDF69A912A336E000FE1145 /* RaceTrackViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 725}}";
+			sepNavSelRange = "{251, 0}";
+			sepNavVisRange = "{0, 258}";
+		};
+	};
+	1BDF69AA12A336E000FE1145 /* RaceTrackViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 949}}";
+			sepNavSelRange = "{400, 0}";
+			sepNavVisRange = "{0, 1841}";
+		};
+	};
+	1D3623240D0F684500981E51 /* CALayerAnimTestAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 748}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 499}";
+		};
+	};
+	1D3623250D0F684500981E51 /* CALayerAnimTestAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1040}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2019}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* CALayerAnimTest */ = {
+		activeExec = 0;
+		executables = (
+			1BDF681C12A2BD5800FE1145 /* CALayerAnimTest */,
+		);
+	};
+	28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {952, 748}}";
+			sepNavSelRange = "{299, 0}";
+			sepNavVisRange = "{0, 521}";
+		};
+	};
+	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 1352}}";
+			sepNavSelRange = "{352, 0}";
+			sepNavVisRange = "{28, 361}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 1BDF681C12A2BD5800FE1145 /* CALayerAnimTest */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* CALayerAnimTest */;
+		addToTargets = (
+		);
+		breakpoints = (
+			1B2D461912B6E9A600745347 /* RaceTrackView.m:38 */,
+		);
+		codeSenseManager = 1BDF682C12A2BD5B00FE1145 /* Code sense */;
+		executables = (
+			1BDF681C12A2BD5800FE1145 /* CALayerAnimTest */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					774,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					579,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 315555226;
+			PBXWorkspaceStateSaveDate = 315555226;
+		};
+		perUserProjectItems = {
+			1B6E1E0E12CEFDAC00C44A42 /* PBXTextBookmark */ = 1B6E1E0E12CEFDAC00C44A42 /* PBXTextBookmark */;
+			1B6E1F8C12CFD21000C44A42 /* PBXTextBookmark */ = 1B6E1F8C12CFD21000C44A42 /* PBXTextBookmark */;
+			1B6E1F8E12CFD21000C44A42 /* PBXTextBookmark */ = 1B6E1F8E12CFD21000C44A42 /* PBXTextBookmark */;
+			1B6E1F9B12CFD8AC00C44A42 /* PBXTextBookmark */ = 1B6E1F9B12CFD8AC00C44A42 /* PBXTextBookmark */;
+			1B6E1FAB12CFDAFB00C44A42 /* PBXTextBookmark */ = 1B6E1FAB12CFDAFB00C44A42 /* PBXTextBookmark */;
+			1B6E1FAC12CFDAFB00C44A42 /* PBXTextBookmark */ = 1B6E1FAC12CFDAFB00C44A42 /* PBXTextBookmark */;
+			1B6E1FAD12CFDAFB00C44A42 /* PBXTextBookmark */ = 1B6E1FAD12CFDAFB00C44A42 /* PBXTextBookmark */;
+			1B6E1FAE12CFDAFB00C44A42 /* PBXTextBookmark */ = 1B6E1FAE12CFDAFB00C44A42 /* PBXTextBookmark */;
+			1B6E20B512D1A1CB00C44A42 /* PBXTextBookmark */ = 1B6E20B512D1A1CB00C44A42 /* PBXTextBookmark */;
+			1B6E20BA12D1A20800C44A42 /* PBXTextBookmark */ = 1B6E20BA12D1A20800C44A42 /* PBXTextBookmark */;
+			1B6E20BB12D1A20800C44A42 /* PBXTextBookmark */ = 1B6E20BB12D1A20800C44A42 /* PBXTextBookmark */;
+			1B6E20D112D1A46400C44A42 /* PBXTextBookmark */ = 1B6E20D112D1A46400C44A42 /* PBXTextBookmark */;
+			1BDF68F312A30DF800FE1145 /* PBXTextBookmark */ = 1BDF68F312A30DF800FE1145 /* PBXTextBookmark */;
+			1BDF68F512A30DF800FE1145 /* PBXBookmark */ = 1BDF68F512A30DF800FE1145 /* PBXBookmark */;
+		};
+		sourceControlManager = 1BDF682B12A2BD5B00FE1145 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+}
