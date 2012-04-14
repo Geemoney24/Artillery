@@ -20,6 +20,7 @@
 		34218FF4150FC53300F42696 /* TouchControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 34218FF3150FC53300F42696 /* TouchControl.m */; };
 		34218FFF150FD4D300F42696 /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 34218FFE150FD4D300F42696 /* Tank.m */; };
 		346F10EB1531F48A009BFA33 /* CannonBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F10EA1531F48A009BFA33 /* CannonBall.m */; };
+		34A48C1C1539FCA300936142 /* ParentViewMultiplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A48C1B1539FCA300936142 /* ParentViewMultiplayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		34218FFE150FD4D300F42696 /* Tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tank.m; path = GameFiles/Tank.m; sourceTree = "<group>"; };
 		346F10E91531F48A009BFA33 /* CannonBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CannonBall.h; path = GameFiles/CannonBall.h; sourceTree = "<group>"; };
 		346F10EA1531F48A009BFA33 /* CannonBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CannonBall.m; path = GameFiles/CannonBall.m; sourceTree = "<group>"; };
+		34A48C1A1539FCA300936142 /* ParentViewMultiplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParentViewMultiplayer.h; path = GameFiles/ParentViewMultiplayer.h; sourceTree = "<group>"; };
+		34A48C1B1539FCA300936142 /* ParentViewMultiplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParentViewMultiplayer.m; path = GameFiles/ParentViewMultiplayer.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Artillery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Artillery-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +138,8 @@
 				346F10EA1531F48A009BFA33 /* CannonBall.m */,
 				34218FEE150FC26900F42696 /* ParentView.h */,
 				34218FEF150FC26900F42696 /* ParentView.m */,
+				34A48C1A1539FCA300936142 /* ParentViewMultiplayer.h */,
+				34A48C1B1539FCA300936142 /* ParentViewMultiplayer.m */,
 			);
 			name = GameFiles;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				34218FF4150FC53300F42696 /* TouchControl.m in Sources */,
 				34218FFF150FD4D300F42696 /* Tank.m in Sources */,
 				346F10EB1531F48A009BFA33 /* CannonBall.m in Sources */,
+				34A48C1C1539FCA300936142 /* ParentViewMultiplayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

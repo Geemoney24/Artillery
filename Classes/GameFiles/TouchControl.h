@@ -11,8 +11,10 @@
 @interface TouchControl : UIView  <UIGestureRecognizerDelegate> {
     CGFloat playerTurn;
     CGFloat turretAngle;
+    Boolean cpu;
 }
 
 @property (nonatomic, assign) CGPoint touchOffset;
+-(void) setCPU:(Boolean)c;
 
 @end

@@ -19,7 +19,7 @@
 
 @property(nonatomic, assign) CGFloat turretAngle;
 
-
+ 
 - (id)initWithRect:(CGRect)rect inLayer:(CALayer *)parentLayer;
 - (void)build:(CGRect)rect inLayer:(CALayer *)parentLayer;
 - (CALayer *)makeWallAtOrigin:(CGPoint)origin withSize:(CGSize)size color:(CGColorRef)color;

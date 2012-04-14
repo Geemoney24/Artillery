@@ -6,6 +6,8 @@
 
 #import "RootViewController.h"
 #import "ParentView.h"
+#import "ParentViewMultiplayer.h"
+
 
 @implementation RootViewController
 
@@ -24,10 +26,10 @@
 	switch (type) {
 		case PlayerVsPlayer:
             printf("PlayerVsPlayer");
-			return [ParentView class];
+            return [ParentViewMultiplayer class ];
 		case PlayerVsCPU:
 			printf("PlayerVsCPU");
-            return nil;//[FloatingCloudViewController class];
+            return [ParentView class];
 		default:
 			return nil;
 	}

@@ -83,6 +83,7 @@ CGFloat y;// = pos.y + 150 * sin(45);
     CAAnimationGroup *group = [CAAnimationGroup animation];
     [group setDuration:4.0];
     [group setRepeatCount:1.0];
+    group.fillMode = kCAFillModeForwards;
     [group setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [group setAnimations:[NSArray arrayWithObjects:animation, animation2, animation3, animation4, nil]];
     [ball addAnimation:group forKey:nil];

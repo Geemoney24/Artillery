@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ParentView.h"
+#import "ParentViewMultiplayer.h"
 #import "TouchControl.h"
 
-@implementation ParentView
+@implementation ParentViewMultiplayer
 
 - (void)didReceiveMemoryWarning
 {
@@ -27,7 +27,7 @@
     TouchControl *view = [[TouchControl alloc] initWithFrame:CGRectMake( 0, 0, screen.size.width, screen.size.height)];
     [view setCPU:true];
     [self.view addSubview:view];
-   
+    
 }
 
 - (void)viewDidUnload{[super viewDidUnload];}

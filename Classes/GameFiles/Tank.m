@@ -15,11 +15,12 @@
 @synthesize turretAngle;
 
 
-- (id)initWithRect:(CGRect)rect inLayer:(CALayer *)parentLayer {
+- (id)initWithRect:(CGRect)rect inLayer:(CALayer *)parentLayer{
     self = [super init];
     if (self) {
         [self build:rect inLayer:parentLayer];
         turretAngle = 0;
+        
     }
     return self;
 }
