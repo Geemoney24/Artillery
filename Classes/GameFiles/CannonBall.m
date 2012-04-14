@@ -36,10 +36,10 @@ CGFloat y;// = pos.y + 150 * sin(45);
     //mid point 
     x = pos.x + r * sin(angle * M_PI / 180); //becasue my x and y are in oppisite land
     y = pos.y + r * cos(angle * M_PI / 180); 
-    printf("pow=%f", pow);
     //end point
     CGFloat  endx = 55;
-    CGFloat  endy = y + pow;//posibly wrong??
+    CGFloat  endy = y + (y - pos.y);
+        
     
     CGColorRef color  = CGColorRetain([UIColor colorWithRed:.0f green:.0f blue:.0f alpha:1.f].CGColor);
     ball = [CALayer layer];

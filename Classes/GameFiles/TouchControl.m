@@ -116,7 +116,7 @@ CGPoint gunOrigin;
             
             if (playerTurn == 1){
                 //fire!!!  subtracting 90 seems to work better....
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:90-angle radius:250 ]; 
+                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:90-angle radius:350 ]; 
                 
                 //remember the current angle
                 [tank1 setTurretAngle:angle]; 
@@ -144,7 +144,7 @@ CGPoint gunOrigin;
                 
                 //fire!!!
                 printf("%f < \n",angle);
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-angle) radius:-250 ];
+                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-angle) radius:-350 ];
                 
                 [tank2 setTurretAngle:angle];
                 
