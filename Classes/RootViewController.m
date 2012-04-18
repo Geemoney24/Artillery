@@ -25,10 +25,10 @@
 + (Class)classForType:(GameType)type {
 	switch (type) {
 		case PlayerVsPlayer:
-            printf("PlayerVsPlayer");
+            //printf("PlayerVsPlayer");
             return [ParentViewMultiplayer class ];
 		case PlayerVsCPU:
-			printf("PlayerVsCPU");
+			//printf("PlayerVsCPU");
             return [ParentView class];
 		default:
 			return nil;

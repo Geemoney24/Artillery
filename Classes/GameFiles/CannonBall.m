@@ -87,14 +87,15 @@ CGFloat y;// = pos.y + 150 * sin(45);
     [group setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [group setAnimations:[NSArray arrayWithObjects:animation, animation2, animation3, animation4, nil]];
     [ball addAnimation:group forKey:nil];
-    
-    printf("start pt>%f,%f\n",pos.x,pos.y);
-    printf("mid   pt>%f,%f\n",x,y);
-    printf("end   pt>%f,%f\n",endx,endy);
 
     end =  CGPointMake(endx, endy);
     
 }
+
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
+    printf("Animation did stop!!");
+}
+
 
 -(CGPoint )getEnd{return end;}
 -(CALayer *)getBall{return  ball;}

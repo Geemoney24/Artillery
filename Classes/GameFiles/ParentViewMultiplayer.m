@@ -25,7 +25,7 @@
     
     CGRect screen = [[UIScreen mainScreen] bounds]; 
     TouchControl *view = [[TouchControl alloc] initWithFrame:CGRectMake( 0, 0, screen.size.width, screen.size.height)];
-    [view setCPU:true];
+    [view setCPU:false];
     [self.view addSubview:view];
     
 }

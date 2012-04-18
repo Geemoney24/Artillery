@@ -115,8 +115,6 @@ CGPoint gunOrigin;
 
         if ([tank containsPoint:location] == TRUE){
             
-                printf("%f,%f",[tank position].x, [tank position].y);
-            
             if (playerTurn == 1){
                 //fire!!!  subtracting 90 seems to work better....
                 ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:90-angle radius:350 ]; 
@@ -145,7 +143,6 @@ CGPoint gunOrigin;
                 {
                     int randomAngle = arc4random() % 30;
 
-                    printf("%d\n",randomAngle);
                     gun.transform = CATransform3DRotate(transform, -(randomAngle)* M_PI / 180, 0.0, 0.0, 1.0);
                     [tank2 setTurretAngle:randomAngle];
                     ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-(-randomAngle)) radius:-350 ];
@@ -172,7 +169,6 @@ CGPoint gunOrigin;
             }else if (playerTurn == 2){
                 
                 //fire!!!
-                printf("%f < \n",angle);
                 ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-angle) radius:-350 ];
                 
                 [tank2 setTurretAngle:angle];
