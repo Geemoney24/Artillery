@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     CGRect screen = [[UIScreen mainScreen] bounds]; 
-    TouchControl *view = [[TouchControl alloc] initWithFrame:CGRectMake( 0, 0, screen.size.width, screen.size.height)];
+    TouchControl *view = [[TouchControl alloc] initWithFrame:CGRectMake( 0, 0, screen.size.height, screen.size.width)];
     [view setCPU:false];
     [self.view addSubview:view];
     
@@ -42,6 +42,5 @@
 - (void)viewDidAppear:(BOOL)animated{[super viewDidAppear:animated];}
 - (void)viewWillDisappear:(BOOL)animated{[super viewWillDisappear:animated];}
 - (void)viewDidDisappear:(BOOL)animated{[super viewDidDisappear:animated];}
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{return YES;}
 
 @end

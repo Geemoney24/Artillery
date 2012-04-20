@@ -12,17 +12,12 @@
 #import "CannonBall.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define groundHeight 100.0
+#define groundHeight 75.0
 
-#define tank1X 50.0
-#define tank1Y 10.0
+#define tankOffset 50.0
 
-#define tank2X 50.0
-#define tank2Y 365.0
-
-
-#define tankHeight 20
-#define tankWidth 40
+#define tankHeight 40
+#define tankWidth 20
 
 #define P(x,y) CGPointMake(x,y)
 
@@ -60,8 +55,8 @@ CGPoint gunOrigin;
         //Draw the ground
         UIBezierPath *terrain = [UIBezierPath bezierPath];
         
-        [terrain moveToPoint:P(0., 0.)];
-        [terrain addLineToPoint:P(1000., 0.)];
+        [terrain moveToPoint:P(0 , frame.size.height-groundHeight)];
+        [terrain addLineToPoint:P(frame.size.width, frame.size.height-groundHeight)];
         
         ground = [CAShapeLayer layer];
         ground.path = terrain.CGPath;
@@ -70,9 +65,11 @@ CGPoint gunOrigin;
         ground.lineWidth = groundHeight;
         [self.layer addSublayer:ground];
         
+        printf("%f-%f=%f\n",frame.size.width, tankOffset,frame.size.width - groundHeight);
+        printf("%f,%f",frame.size.height,frame.size.height -groundHeight);
         //Lets build some tanks!!
-        tank1 = [[Tank alloc] initWithRect:CGRectMake(tank1X, tank1Y, tankHeight, tankWidth) inLayer:ground];
-        tank2 = [[Tank alloc] initWithRect:CGRectMake(tank2X, tank2Y, tankHeight, tankWidth) inLayer:ground];
+        tank1 = [[Tank alloc] initWithRect:CGRectMake(tankOffset, frame.size.height - tankHeight - groundHeight, tankHeight, tankWidth) inLayer:ground];
+        tank2 = [[Tank alloc] initWithRect:CGRectMake(frame.size.width - tankOffset -tankWidth, 187, tankHeight, tankWidth) inLayer:ground];
         
         //player1 goes first
         playerTurn = 1;
@@ -204,7 +201,5 @@ CGPoint gunOrigin;
         playerTurn = playerTurn * (-1);//playerTurn will be set to -2 after player 1's turn, and -1 after player 2 turn
                                         
 }
-
-
 
 @end
