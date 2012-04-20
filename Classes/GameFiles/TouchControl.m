@@ -61,7 +61,7 @@ CGPoint gunOrigin;
         UIBezierPath *terrain = [UIBezierPath bezierPath];
         
         [terrain moveToPoint:P(0., 0.)];
-        [terrain addLineToPoint:P(0., 1000.)];
+        [terrain addLineToPoint:P(1000., 0.)];
         
         ground = [CAShapeLayer layer];
         ground.path = terrain.CGPath;
@@ -108,7 +108,7 @@ CGPoint gunOrigin;
 -(void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
     CATransform3D transform = CATransform3DIdentity;
-    UILabel *textField;
+    
     
     for( UITouch *touch in touches ){
         CGPoint location = [touch locationInView:self.superview];
@@ -127,44 +127,8 @@ CGPoint gunOrigin;
                 gunOrigin =[tank2 getGunOrgin];
                 gun = [tank2 gun];
                 tank = [tank2 body];
-                
-                
-                if ([tank containsPoint:[ball getEnd]] == TRUE){
-                    textField = [[UILabel alloc] initWithFrame:CGRectMake(100, 225, 200, 20)];
-                    [textField setText:@"Player 1 Wins!!"];
-                    [textField setBackgroundColor:[UIColor blueColor]];
-                    [textField setTextColor:[UIColor whiteColor]];
-                    [textField endEditing:false];
-                    [textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
-                    [self addSubview:textField];
-                    playerTurn = -2;
-                }
-                else if (cpu)//if there is a cpu opponent
-                {
-                    int randomAngle = arc4random() % 30;
-
-                    gun.transform = CATransform3DRotate(transform, -(randomAngle)* M_PI / 180, 0.0, 0.0, 1.0);
-                    [tank2 setTurretAngle:randomAngle];
-                    ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-(-randomAngle)) radius:-350 ];
-                    angle = [tank1 turretAngle];
-                    gunOrigin =[tank1 getGunOrgin];
-                    gun = [tank1 gun];
-                    tank = [tank1 body];
-                    
-                    if ([tank containsPoint:[ball getEnd]] == TRUE){
-                        textField = [[UILabel alloc] initWithFrame:CGRectMake(100, 225, 200, 20)];
-                        [textField setText:@"Player 2 Wins!!"];
-                        [textField setBackgroundColor:[UIColor blueColor]];
-                        [textField setTextColor:[UIColor whiteColor]];
-                        [textField endEditing:false];
-                        [textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
-                        [self addSubview:textField];
-                        
-                        playerTurn = -1;
-                    }
-                    
-                }else
-                    playerTurn = 2;
+                playerTurn = -2;
+               
                     
             }else if (playerTurn == 2){
                 
@@ -178,22 +142,9 @@ CGPoint gunOrigin;
                 gunOrigin =[tank1 getGunOrgin];
                 gun = [tank1 gun];
                 tank = [tank1 body];
-                
-                if ([tank containsPoint:[ball getEnd]] == TRUE){
-                    textField = [[UILabel alloc] initWithFrame:CGRectMake(100, 225, 200, 20)];
-                    [textField setText:@"Player 2 Wins!!"];
-                    [textField setBackgroundColor:[UIColor blueColor]];
-                    [textField setTextColor:[UIColor whiteColor]];
-                    [textField endEditing:false];
-                    [textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
-                    [self addSubview:textField];
-                    
-                    playerTurn = -1;
-                }
-                else
-                    playerTurn = 1;
+                playerTurn = -1;
             }
-            
+            [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
             
         }else{
             if (playerTurn == 1) {
@@ -219,6 +170,40 @@ CGPoint gunOrigin;
     [self touchesEnded:touches withEvent:event];
 }
 
+
+-(void) setPlayerTurn{
+    UILabel *textField;
+    
+    if ([tank containsPoint:[ball getEnd]] == TRUE){
+        textField = [[UILabel alloc] initWithFrame:CGRectMake(100, 225, 200, 20)];
+        [textField setBackgroundColor:[UIColor blueColor]];
+        [textField setTextColor:[UIColor whiteColor]];
+        [textField endEditing:false];
+        [textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
+        [self addSubview:textField];
+        if (playerTurn == -2)
+            [textField setText:@"Player 1 Wins!!"];
+        else
+            [textField setText:@"Player 2 Wins!!"];
+    }
+    else if (cpu && playerTurn == -2)//if there is a cpu opponent
+    {
+        int randomAngle = arc4random() % 30;
+        CATransform3D transform = CATransform3DIdentity;
+        gun.transform = CATransform3DRotate(transform, -(randomAngle)* M_PI / 180, 0.0, 0.0, 1.0);
+        [tank2 setTurretAngle:randomAngle];
+        ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-(-randomAngle)) radius:-350 ];
+        angle = [tank1 turretAngle];
+        gunOrigin =[tank1 getGunOrgin];
+        gun = [tank1 gun];
+        tank = [tank1 body];
+        playerTurn = -1;
+        [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
+    }
+    else
+        playerTurn = playerTurn * (-1);//playerTurn will be set to -2 after player 1's turn, and -1 after player 2 turn
+                                        
+}
 
 
 

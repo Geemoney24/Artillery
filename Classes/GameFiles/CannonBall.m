@@ -5,7 +5,9 @@
 //  Created by default on 4/8/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-
+//possibly look into this...
+//http://stackoverflow.com/questions/10132420/very-custom-uibutton-animation-in-ios/10144676
+//
 #import "CannonBall.h"
 #import <QuartzCore/CAAnimation.h>
 #import <QuartzCore/CAMediaTimingFunction.h>
@@ -83,17 +85,19 @@ CGFloat y;// = pos.y + 150 * sin(45);
     CAAnimationGroup *group = [CAAnimationGroup animation];
     [group setDuration:4.0];
     [group setRepeatCount:1.0];
-    group.fillMode = kCAFillModeForwards;
     [group setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
     [group setAnimations:[NSArray arrayWithObjects:animation, animation2, animation3, animation4, nil]];
-    [ball addAnimation:group forKey:nil];
+    [ball addAnimation:group forKey:@"frame"];
+    
+    
 
     end =  CGPointMake(endx, endy);
     
 }
 
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
-    printf("Animation did stop!!");
+- (void)animationDidStop{
+    
+    printf("Animation did stop!!\n");
 }
 
 

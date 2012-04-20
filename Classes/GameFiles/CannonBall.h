@@ -15,7 +15,7 @@
 - (id)initWithRect:(CGPoint)pos inLayer:(CALayer *)parentLayer fireAngle:(CGFloat)angle radius:(CGFloat)pow;
 - (void)build:(CGPoint)pos inLayer:(CALayer *)parentLayer fireAngle:(CGFloat)angle radius:(CGFloat)pow;
 
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
+- (void)animationDidStop;
 
 
 - (CALayer *)getBall;

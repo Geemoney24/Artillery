@@ -16,5 +16,5 @@ typedef enum {
 
 + (NSString*)titleForType:(GameType)type;
 + (Class)classForType:(GameType)type;
-
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 @end

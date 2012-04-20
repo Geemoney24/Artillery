@@ -29,12 +29,19 @@
     [self.view addSubview:view];
     
 }
-
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    if ( UIInterfaceOrientationIsLandscape(toInterfaceOrientation) )
+    {
+        return YES;
+    }
+    return NO;
+} 
 - (void)viewDidUnload{[super viewDidUnload];}
 - (void)viewWillAppear:(BOOL)animated{[super viewWillAppear:animated];}
 - (void)viewDidAppear:(BOOL)animated{[super viewDidAppear:animated];}
 - (void)viewWillDisappear:(BOOL)animated{[super viewWillDisappear:animated];}
 - (void)viewDidDisappear:(BOOL)animated{[super viewDidDisappear:animated];}
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{return YES;}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{return YES;}
 
 @end
