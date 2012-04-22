@@ -12,6 +12,7 @@
     CGFloat playerTurn;
     CGFloat turretAngle;
     Boolean cpu;
+    BOOL allowTapTouches;
 }
 
 @property (nonatomic, assign) CGPoint touchOffset;

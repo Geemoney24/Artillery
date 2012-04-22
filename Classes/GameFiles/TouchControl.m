@@ -78,9 +78,72 @@ CGPoint gunOrigin;
         tank = [tank1 body];
         gunOrigin = [tank1 getGunOrgin];  
         
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        tap.delegate = self;
+        [self addGestureRecognizer:tap];
+        
     }
     return self;
 }
+
+-(BOOL) gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer
+       shouldReceiveTouch:(UITouch*)touch
+{
+    return allowTapTouches;
+}
+
+-(void) handleTap:(UITapGestureRecognizer*)tap
+{
+    if (playerTurn == 1)
+        [tank1 setTurretAngle:angle];
+    if (playerTurn == 2)
+        [tank2 setTurretAngle:angle];
+    
+    
+    //if ([tank containsPoint:location] == TRUE){
+        
+        if (playerTurn == 1){
+            //fire!!!  subtracting 90 seems to work better....
+            ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-7, gun.position.y) inLayer:ground fireAngle:angle radius:350 ]; 
+            
+            //set player2 stuff
+            angle = [tank2 turretAngle];
+            gunOrigin =[tank2 getGunOrgin];
+            gun = [tank2 gun];
+            tank = [tank2 body];
+            playerTurn = -2;
+            
+            
+        }else if (playerTurn == 2){
+            
+            //fire!!!
+            ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(angle) radius:-350 ];
+            
+            //set player1 stuff
+            angle = [tank1 turretAngle];
+            gunOrigin =[tank1 getGunOrgin];
+            gun = [tank1 gun];
+            tank = [tank1 body];
+            playerTurn = -1;
+        }
+        [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
+        
+    //}//end if
+
+}
+
+-(UIView*) hitTest:(CGPoint)point withEvent:(UIEvent*)event
+{
+    UIView *view = [super hitTest:point withEvent:event];
+    if( [view isKindOfClass:[UIControl class]] ) {
+        allowTapTouches = FALSE;
+    } else {
+        allowTapTouches = TRUE;
+    }
+    return view;
+}
+
+
 
 //http://watchingapple.com/2008/04/core-animation-paths/
 -(void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
