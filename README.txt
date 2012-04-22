@@ -4,6 +4,6 @@ T. Codi Gann
 
 How To:
 The tank on the left always goes first.
-To aim tap to the left or the right of the active Tank.
-To fire tap the active tank.
+To aim tap drag your finger on the screen
+To fire tap anywhere
 
