@@ -26,24 +26,25 @@
 }
 
 - (void)build:(CGRect)rect inLayer:(CALayer *)parentLayer {
-	float x = rect.origin.x;
-	float y = rect.origin.y;
-	float w = rect.size.width;
-	float h = rect.size.height;
-    
-    float offset = 0;
-    
-    if (y>w)
-        offset = y + 10 + w/2;
-    else
-        offset = y + (w - y);//top tank
-    
-    CGColorRef bodyColor  = CGColorRetain([UIColor colorWithRed:.0f green:.0f blue:0.0f alpha:1.f].CGColor);
+	
+    CGColorRef bodyColor  = CGColorRetain([UIColor colorWithRed:.0f green:0.f blue:0.0f alpha:1.f].CGColor);
     CGColorRef gunColor  = CGColorRetain([UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.f].CGColor);
     
-    gunx = x + ((x-h)/2);
-    guny =  offset;
-    gun = [self makeWallAtOrigin:CGPointMake(x + ((x-h)/2),  offset ) withSize:CGSizeMake([self gunHeight], [self gunWidth]) color:gunColor];
+    float x = rect.origin.x;    // tank x
+	float y = rect.origin.y;    // tank y
+	float w = rect.size.width;  // tank w
+	float h = rect.size.height; // tank h
+  
+    if (x > 200)
+        gunx =  x + w/2 + 10;// right tank
+    else
+        gunx =  x + w/2; // left tank
+    
+    guny =  (y + h/2 )+2;
+    
+    gun = [self makeWallAtOrigin:CGPointMake(gunx, guny ) withSize:CGSizeMake([self gunWidth], [self gunHeight]) color:gunColor];
+    CATransform3D transform = CATransform3DIdentity;
+    gun.transform = CATransform3DRotate(transform, 180* M_PI / 180, 0.0, 0.0, 1.0);
     body = [self makeWallAtOrigin:CGPointMake(x, y) withSize:CGSizeMake(w, h) color:bodyColor];
     
 

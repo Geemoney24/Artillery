@@ -27,7 +27,7 @@ CGFloat x;// = pos.x + 150 * cos(45);
 CGFloat y;// = pos.y + 150 * sin(45);
 
 - (void)build:(CGPoint)pos inLayer:(CALayer *)parentLayer fireAngle:(CGFloat)angle radius:(CGFloat)pow{
-    
+    printf("%f", angle);
 	    
     CGFloat r;
     if (pow < 0)
@@ -36,11 +36,11 @@ CGFloat y;// = pos.y + 150 * sin(45);
         r = pow;
     
     //mid point 
-    x = pos.x + r * sin(angle * M_PI / 180); //becasue my x and y are in oppisite land
-    y = pos.y + r * cos(angle * M_PI / 180); 
+    y = pos.y - r * sin(angle * M_PI / 180); 
+    x = pos.x + r * cos(angle * M_PI / 180); 
     //end point
-    CGFloat  endx = 55;
-    CGFloat  endy = y + (y - pos.y);
+    CGFloat  endy = 200;
+    CGFloat  endx = x + (x - pos.x);
         
     
     CGColorRef color  = CGColorRetain([UIColor colorWithRed:.0f green:.0f blue:.0f alpha:1.f].CGColor);

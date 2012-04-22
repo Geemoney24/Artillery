@@ -16,8 +16,8 @@
 
 #define tankOffset 50.0
 
-#define tankHeight 40
-#define tankWidth 20
+#define tankWidth 40
+#define tankHeight 20
 
 #define P(x,y) CGPointMake(x,y)
 
@@ -66,13 +66,14 @@ CGPoint gunOrigin;
         [self.layer addSublayer:ground];
         
         printf("%f-%f=%f\n",frame.size.width, tankOffset,frame.size.width - groundHeight);
-        printf("%f,%f",frame.size.height,frame.size.height -groundHeight);
+        printf("%f,%f",frame.size.height,frame.size.height - groundHeight);
         //Lets build some tanks!!
-        tank1 = [[Tank alloc] initWithRect:CGRectMake(tankOffset, frame.size.height - tankHeight - groundHeight, tankHeight, tankWidth) inLayer:ground];
-        tank2 = [[Tank alloc] initWithRect:CGRectMake(frame.size.width - tankOffset -tankWidth, 187, tankHeight, tankWidth) inLayer:ground];
+        tank1 = [[Tank alloc] initWithRect:CGRectMake(tankOffset, 187, tankWidth, tankHeight) inLayer:ground];
+        tank2 = [[Tank alloc] initWithRect:CGRectMake(frame.size.width - tankOffset -tankWidth, 187,  tankWidth,tankHeight) inLayer:ground];
         
         //player1 goes first
         playerTurn = 1;
+        angle = [tank1 turretAngle];
         gun = [tank1 gun];
         tank = [tank1 body];
         gunOrigin = [tank1 getGunOrgin];  
@@ -93,10 +94,20 @@ CGPoint gunOrigin;
 
 -(void) touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    
+    CATransform3D transform = CATransform3DIdentity;
+
     for( UITouch *touch in touches )
     {
-        //gun.position = CGPointMake(location.x,location.y);
+        CGPoint location = [touch locationInView:self.superview];
+        CGFloat radians = atan2f( location.y - gunOrigin.y , location.x - gunOrigin.x);
+        
+        
+        if( ( playerTurn == 1 && (radians  * 180 / M_PI) < -30 && (radians  * 180 / M_PI) >  -90) ||
+            ( playerTurn == 2 && (radians  * 180 / M_PI) < -90  && (radians  * 180 / M_PI) > -140)){
+            gun.transform = CATransform3DRotate(transform,(270* M_PI / 180) + radians, 0.0, 0.0, 1.0);    
+            angle = -(radians * 180 / M_PI);
+        }        
+
     }
 
 }
@@ -104,21 +115,24 @@ CGPoint gunOrigin;
 
 -(void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    CATransform3D transform = CATransform3DIdentity;
+    
     
     
     for( UITouch *touch in touches ){
         CGPoint location = [touch locationInView:self.superview];
+        
+        if (playerTurn == 1)
+            [tank1 setTurretAngle:angle];
+        if (playerTurn == 2)
+            [tank2 setTurretAngle:angle];
 
+        
         if ([tank containsPoint:location] == TRUE){
             
             if (playerTurn == 1){
                 //fire!!!  subtracting 90 seems to work better....
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:90-angle radius:350 ]; 
-                
-                //remember the current angle
-                [tank1 setTurretAngle:angle]; 
-                
+                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-7, gun.position.y) inLayer:ground fireAngle:angle radius:350 ]; 
+                 
                 //set player2 stuff
                 angle = [tank2 turretAngle];
                 gunOrigin =[tank2 getGunOrgin];
@@ -130,10 +144,8 @@ CGPoint gunOrigin;
             }else if (playerTurn == 2){
                 
                 //fire!!!
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-angle) radius:-350 ];
-                
-                [tank2 setTurretAngle:angle];
-                
+                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(angle) radius:-350 ];
+
                 //set player1 stuff
                 angle = [tank1 turretAngle];
                 gunOrigin =[tank1 getGunOrgin];
@@ -143,23 +155,8 @@ CGPoint gunOrigin;
             }
             [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
             
-        }else{
-            if (playerTurn == 1) {
-                if ( (location.y > gunOrigin.y && angle < 30) ) 
-                    angle +=5;
-                else if ( (location.y < gunOrigin.y && angle > 0)  )
-                    angle -=5;
-            }else if (playerTurn ==2){
-                
-                if ( (location.y > gunOrigin.y && angle < 0) ) 
-                    angle +=5;
-                else if ( (location.y < gunOrigin.y && angle > -30)  )
-                    angle -=5;
-            }
-                
-            gun.transform = CATransform3DRotate(transform, angle* M_PI / 180, 0.0, 0.0, 1.0);
-        }
-    }
+        }//end if
+    }//end for
 }
 
 -(void) touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event
@@ -172,11 +169,11 @@ CGPoint gunOrigin;
     UILabel *textField;
     
     if ([tank containsPoint:[ball getEnd]] == TRUE){
-        textField = [[UILabel alloc] initWithFrame:CGRectMake(100, 225, 200, 20)];
+        textField = [[UILabel alloc] initWithFrame:CGRectMake(180, 0, 150, 20)];
         [textField setBackgroundColor:[UIColor blueColor]];
         [textField setTextColor:[UIColor whiteColor]];
         [textField endEditing:false];
-        [textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
+        //[textField setTransform:CGAffineTransformMakeRotation(M_PI/2)];
         [self addSubview:textField];
         if (playerTurn == -2)
             [textField setText:@"Player 1 Wins!!"];
@@ -185,11 +182,11 @@ CGPoint gunOrigin;
     }
     else if (cpu && playerTurn == -2)//if there is a cpu opponent
     {
-        int randomAngle = arc4random() % 30;
+        int randomAngle = -( (arc4random() % (140 - 90)) + 90);
         CATransform3D transform = CATransform3DIdentity;
-        gun.transform = CATransform3DRotate(transform, -(randomAngle)* M_PI / 180, 0.0, 0.0, 1.0);
+        gun.transform = CATransform3DRotate(transform, (270* M_PI / 180) + (randomAngle)* M_PI / 180, 0.0, 0.0, 1.0);
         [tank2 setTurretAngle:randomAngle];
-        ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x, gun.position.y+5) inLayer:ground fireAngle:(90-(-randomAngle)) radius:-350 ];
+        ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(-randomAngle) radius:-350 ];
         angle = [tank1 turretAngle];
         gunOrigin =[tank1 getGunOrgin];
         gun = [tank1 gun];
