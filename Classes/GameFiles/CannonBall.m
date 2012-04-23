@@ -27,7 +27,7 @@ CGFloat x;// = pos.x + 150 * cos(45);
 CGFloat y;// = pos.y + 150 * sin(45);
 
 - (void)build:(CGPoint)pos inLayer:(CALayer *)parentLayer fireAngle:(CGFloat)angle radius:(CGFloat)pow{
-    printf("%f", angle);
+    //printf("%f", angle);
 	    
     CGFloat r;
     if (pow < 0)
@@ -95,10 +95,6 @@ CGFloat y;// = pos.y + 150 * sin(45);
     
 }
 
-- (void)animationDidStop{
-    
-    printf("Animation did stop!!\n");
-}
 
 
 -(CGPoint )getEnd{return end;}

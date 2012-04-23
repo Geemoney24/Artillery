@@ -18,4 +18,5 @@
 @property (nonatomic, assign) CGPoint touchOffset;
 -(void) setCPU:(Boolean)c;
 -(void) setPlayerTurn;
+-(void) setPlayerTurnCPU;
 @end

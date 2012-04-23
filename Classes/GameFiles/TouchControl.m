@@ -64,9 +64,7 @@ CGPoint gunOrigin;
         ground.fillColor = [UIColor clearColor].CGColor;
         ground.lineWidth = groundHeight;
         [self.layer addSublayer:ground];
-        
-        printf("%f-%f=%f\n",frame.size.width, tankOffset,frame.size.width - groundHeight);
-        printf("%f,%f",frame.size.height,frame.size.height - groundHeight);
+       
         //Lets build some tanks!!
         tank1 = [[Tank alloc] initWithRect:CGRectMake(tankOffset, 187, tankWidth, tankHeight) inLayer:ground];
         tank2 = [[Tank alloc] initWithRect:CGRectMake(frame.size.width - tankOffset -tankWidth, 187,  tankWidth,tankHeight) inLayer:ground];
@@ -80,6 +78,7 @@ CGPoint gunOrigin;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         tap.delegate = self;
+        tap.numberOfTapsRequired = 2;//so we cannot accedently fire
         [self addGestureRecognizer:tap];
         
     }
@@ -99,36 +98,35 @@ CGPoint gunOrigin;
     if (playerTurn == 2)
         [tank2 setTurretAngle:angle];
     
-    
-    //if ([tank containsPoint:location] == TRUE){
+    printf("tippy tap\n");
         
-        if (playerTurn == 1){
-            //fire!!!  subtracting 90 seems to work better....
-            ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-7, gun.position.y) inLayer:ground fireAngle:angle radius:350 ]; 
+    if (playerTurn == 1){
+        //fire!!!  subtracting 90 seems to work better....
+        ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-7, gun.position.y) inLayer:ground fireAngle:angle radius:350 ]; 
             
-            //set player2 stuff
-            angle = [tank2 turretAngle];
-            gunOrigin =[tank2 getGunOrgin];
-            gun = [tank2 gun];
-            tank = [tank2 body];
-            playerTurn = -2;
+        //set player2 stuff
+        angle = [tank2 turretAngle];
+        gunOrigin =[tank2 getGunOrgin];
+        gun = [tank2 gun];
+        tank = [tank2 body];
+        playerTurn = -2;
             
             
-        }else if (playerTurn == 2){
+    }else if (playerTurn == 2){
             
-            //fire!!!
-            ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(angle) radius:-350 ];
+        //fire!!!
+        ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(angle) radius:-350 ];
             
-            //set player1 stuff
-            angle = [tank1 turretAngle];
-            gunOrigin =[tank1 getGunOrgin];
-            gun = [tank1 gun];
-            tank = [tank1 body];
-            playerTurn = -1;
-        }
-        [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
+        //set player1 stuff
+        angle = [tank1 turretAngle];
+        gunOrigin =[tank1 getGunOrgin];
+        gun = [tank1 gun];
+        tank = [tank1 body];
+        playerTurn = -1;
+    }
+    [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
         
-    //}//end if
+
 
 }
 
@@ -176,50 +174,7 @@ CGPoint gunOrigin;
 }
 
 
--(void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
-{
-    
-    
-    
-    for( UITouch *touch in touches ){
-        CGPoint location = [touch locationInView:self.superview];
-        
-        if (playerTurn == 1)
-            [tank1 setTurretAngle:angle];
-        if (playerTurn == 2)
-            [tank2 setTurretAngle:angle];
-
-        
-        if ([tank containsPoint:location] == TRUE){
-            
-            if (playerTurn == 1){
-                //fire!!!  subtracting 90 seems to work better....
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-7, gun.position.y) inLayer:ground fireAngle:angle radius:350 ]; 
-                 
-                //set player2 stuff
-                angle = [tank2 turretAngle];
-                gunOrigin =[tank2 getGunOrgin];
-                gun = [tank2 gun];
-                tank = [tank2 body];
-                playerTurn = -2;
-               
-                    
-            }else if (playerTurn == 2){
-                
-                //fire!!!
-                ball = [ [CannonBall alloc] initWithRect:CGPointMake(gun.position.x-6, gun.position.y) inLayer:ground fireAngle:(angle) radius:-350 ];
-
-                //set player1 stuff
-                angle = [tank1 turretAngle];
-                gunOrigin =[tank1 getGunOrgin];
-                gun = [tank1 gun];
-                tank = [tank1 body];
-                playerTurn = -1;
-            }
-            [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
-            
-        }//end if
-    }//end for
+-(void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event{
 }
 
 -(void) touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event
@@ -257,9 +212,11 @@ CGPoint gunOrigin;
         playerTurn = -1;
         [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
     }
-    else
+    else{
+        printf("PlayerTurn = %f\n", playerTurn);
         playerTurn = playerTurn * (-1);//playerTurn will be set to -2 after player 1's turn, and -1 after player 2 turn
-                                        
+    }                               
 }
+
 
 @end

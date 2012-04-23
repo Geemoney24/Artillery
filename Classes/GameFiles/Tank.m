@@ -19,7 +19,7 @@
     self = [super init];
     if (self) {
         [self build:rect inLayer:parentLayer];
-        turretAngle = 0;
+        turretAngle = 90;
         
     }
     return self;
