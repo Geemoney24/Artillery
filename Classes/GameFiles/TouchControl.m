@@ -98,7 +98,7 @@ CGPoint gunOrigin;
     if (playerTurn == 2)
         [tank2 setTurretAngle:angle];
     
-    printf("tippy tap\n");
+    //printf("tippy tap\n");
         
     if (playerTurn == 1){
         //fire!!!  subtracting 90 seems to work better....
@@ -213,8 +213,8 @@ CGPoint gunOrigin;
         [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
     }
     else{
-        printf("PlayerTurn = %f\n", playerTurn);
         playerTurn = playerTurn * (-1);//playerTurn will be set to -2 after player 1's turn, and -1 after player 2 turn
+        printf("PlayerTurn = %f\n", playerTurn);
     }                               
 }
 
