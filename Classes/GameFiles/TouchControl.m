@@ -213,8 +213,9 @@ CGPoint gunOrigin;
         [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(setPlayerTurn) userInfo:nil repeats:NO];
     }
     else{
+        
         playerTurn = playerTurn * (-1);//playerTurn will be set to -2 after player 1's turn, and -1 after player 2 turn
-        printf("PlayerTurn = %f\n", playerTurn);
+       // printf("PlayerTurn = %f\n", playerTurn);
     }                               
 }
 

@@ -92,7 +92,7 @@ CGFloat y;// = pos.y + 150 * sin(45);
     
 
     end =  CGPointMake(endx, endy);
-    
+
 }
 
 
