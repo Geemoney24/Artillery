@@ -16,3 +16,10 @@
 
 @end
 
+/*
+ Good work. You added some more polish since last time I saw the app, and it's
+ improved. This is a foundation you could build a solid app on.
+ 
+ Grade: 100%
+ Course grade: 100% (A)
+*/

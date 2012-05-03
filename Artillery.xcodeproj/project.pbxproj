@@ -233,6 +233,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Artillery_Prefix.pch;
 				INFOPLIST_FILE = "Artillery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = Artillery;
 			};
 			name = Debug;
@@ -245,6 +246,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Artillery_Prefix.pch;
 				INFOPLIST_FILE = "Artillery-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = Artillery;
 				VALIDATE_PRODUCT = YES;
 			};
